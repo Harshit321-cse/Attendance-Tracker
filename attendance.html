@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Class Attendance</title>
+    <link rel="stylesheet" href="attendance.css">
+        
+    
+</head>
+<body>
+    <div class="mainBox">
+        <h1>KNIT Attendance Tracker </h1> <!-- Added "My Version" to make it personal -->
+        
+        <!-- Section for total sessions -->
+        <div class="inputArea">
+            <label for="maxSessions">How many classes total?</label>
+            <input type="number" id="maxSessions" min="1" value="300" placeholder="Like 10 or whatever">
+            <button onclick="changeMaxSessions()">Update that number</button>
+        </div>
+        
+        <!-- Add kid section -->
+        <div class="inputArea">
+            <label for="kidName">Student's name:</label>
+            <input type="text" id="kidName" placeholder="Enter name here">
+            <label for="sessionsAttended">How many did they show up for?</label>
+            <input type="number" id="sessionsAttended" min="0" placeholder="Number attended">
+            <button onclick="addKid()">Add this student</button>
+        </div>
+        
+        <!-- Button to recalc everything -->
+        <button class="calcButton" onclick="doAllCalcs()">Recalculate All</button>
+        
+        <!-- The table -->
+        <table id="kidTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Total Classes</th>
+                    <th>Attended</th>
+                    <th>% There</th>
+                    <th>Status</th>
+                    <th>Do Stuff</th>
+                </tr>
+            </thead>
+            <tbody id="tableRows">
+                
+            </tbody>
+        </table>
+        
+        <!-- Quick summary at bottom -->
+        <div id="quickSummary" style="margin-top: 20px; padding: 10px; background-color: #e8f5e8; border: 1px solid #ccc;"> 
+            <h3>Quick Stats</h3>
+            <p id="kidCount">Student: 0</p>
+            <p id="lowCount">Student slacking (<75%): 0></p>
+        </div>
+    </div>
+
+    <script src="attendance.js" ></script>
+</body>
+</html>
